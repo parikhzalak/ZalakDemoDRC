@@ -26,6 +26,7 @@ class NewsDetailViewController: UIViewController {
     //MARK:- LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.title = "Details"
         setUpData()
     }
     
@@ -33,7 +34,7 @@ class NewsDetailViewController: UIViewController {
         newsTitleLabel.text     = articalDetail.title
         authorNameLabel.text    = articalDetail.author
         contentLabel.text       = articalDetail.content
-        discriptionLabel.text   = articalDetail.description
+        discriptionLabel.text   = articalDetail.newsDescription
         newsWebLinkLabel.text   = articalDetail.webLink
         dateLabel.text          = articalDetail.publishedAt
         profileImageview.setImage(UIImage(), for: .normal)

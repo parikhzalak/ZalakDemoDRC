@@ -20,7 +20,9 @@
 		9514815726E7AC5A0048FB44 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514815626E7AC5A0048FB44 /* ImageViewController.swift */; };
 		9514815B26E7B3C70048FB44 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514815A26E7B3C70048FB44 /* Utility.swift */; };
 		9514815E26E7B9D20048FB44 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514815D26E7B9D20048FB44 /* NewsModel.swift */; };
-		9514816026E7BA660048FB44 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514815F26E7BA660048FB44 /* ArticleModel.swift */; };
+		9514816326E7C6390048FB44 /* PersistantStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514816226E7C6390048FB44 /* PersistantStorage.swift */; };
+		9514816526E7C69A0048FB44 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514816426E7C69A0048FB44 /* DBManager.swift */; };
+		9514816726E7C6D40048FB44 /* ArticleDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514816626E7C6D40048FB44 /* ArticleDataSync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,9 @@
 		9514815626E7AC5A0048FB44 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		9514815A26E7B3C70048FB44 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		9514815D26E7B9D20048FB44 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		9514815F26E7BA660048FB44 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		9514816226E7C6390048FB44 /* PersistantStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantStorage.swift; sourceTree = "<group>"; };
+		9514816426E7C69A0048FB44 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		9514816626E7C6D40048FB44 /* ArticleDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDataSync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		95059D2626E798F000F8834B /* Zalak_DRCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9514816126E7C61C0048FB44 /* DataBase */,
 				9514815C26E7B9C40048FB44 /* Model */,
 				95059D2726E798F000F8834B /* AppDelegate.swift */,
 				95059D2926E798F000F8834B /* SceneDelegate.swift */,
@@ -81,7 +86,6 @@
 				95059D3326E798F300F8834B /* Assets.xcassets */,
 				95059D3526E798F300F8834B /* LaunchScreen.storyboard */,
 				95059D3826E798F300F8834B /* Info.plist */,
-				95059D3026E798F000F8834B /* Zalak_DRCDemo.xcdatamodeld */,
 			);
 			path = Zalak_DRCDemo;
 			sourceTree = "<group>";
@@ -158,9 +162,19 @@
 			isa = PBXGroup;
 			children = (
 				9514815D26E7B9D20048FB44 /* NewsModel.swift */,
-				9514815F26E7BA660048FB44 /* ArticleModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9514816126E7C61C0048FB44 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				95059D3026E798F000F8834B /* Zalak_DRCDemo.xcdatamodeld */,
+				9514816226E7C6390048FB44 /* PersistantStorage.swift */,
+				9514816426E7C69A0048FB44 /* DBManager.swift */,
+				9514816626E7C6D40048FB44 /* ArticleDataSync.swift */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,10 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9514816026E7BA660048FB44 /* ArticleModel.swift in Sources */,
 				95059D4926E7A96600F8834B /* NewsDetailViewController.swift in Sources */,
 				95059D4726E7A7CD00F8834B /* NewsTableViewCell.swift in Sources */,
+				9514816526E7C69A0048FB44 /* DBManager.swift in Sources */,
 				9514815B26E7B3C70048FB44 /* Utility.swift in Sources */,
+				9514816726E7C6D40048FB44 /* ArticleDataSync.swift in Sources */,
+				9514816326E7C6390048FB44 /* PersistantStorage.swift in Sources */,
 				9514815426E7AC400048FB44 /* WebLinkViewController.swift in Sources */,
 				9514815E26E7B9D20048FB44 /* NewsModel.swift in Sources */,
 				95059D2826E798F000F8834B /* AppDelegate.swift in Sources */,

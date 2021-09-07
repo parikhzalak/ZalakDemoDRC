@@ -26,12 +26,25 @@ class NewsListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getNewsList { (data) in
+        let data = DBManager.shared.fetchArticlesFromDB()
+        if !data.isEmpty {
             self.articlesData = data
-            DispatchQueue.main.async {
-                self.indicatiorView.isHidden = true
-                self.newsListTableView.reloadData()
+            reloadUI()
+        }else {
+            getNewsList { (articles) in
+                self.articlesData = articles
+                for article in articles {
+                    DBManager.shared.saveArticleWith(article)
+                }
+                self.reloadUI()
             }
+        }        
+    }
+    
+    private func reloadUI() {
+        DispatchQueue.main.async {
+            self.indicatiorView.isHidden = true
+            self.newsListTableView.reloadData()
         }
     }
 }

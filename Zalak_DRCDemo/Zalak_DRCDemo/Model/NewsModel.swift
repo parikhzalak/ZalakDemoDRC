@@ -7,6 +7,53 @@
 //
 
 import Foundation
+import CoreData
+
+struct ArticleModel : Codable {
+    let author          : String?
+    let title           : String?
+    let newsDescription : String?
+    let webLink         : String?
+    let urlToImage      : String?
+    let publishedAt     : String?
+    let content         : String?
+
+}
+
+extension ArticleModel {
+    
+    enum CodingKeys: String, CodingKey {
+
+        case author             = "author"
+        case title              = "title"
+        case newsDescription    = "description"
+        case webLink            = "url"
+        case urlToImage         = "urlToImage"
+        case publishedAt        = "publishedAt"
+        case content            = "content"
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        author      = try values.decodeIfPresent(String.self, forKey: .author)
+        title       = try values.decodeIfPresent(String.self, forKey: .title)
+        newsDescription = try values.decodeIfPresent(String.self, forKey: .newsDescription)
+        webLink     = try values.decodeIfPresent(String.self, forKey: .webLink)
+        urlToImage  = try values.decodeIfPresent(String.self, forKey: .urlToImage)
+        publishedAt = try values.decodeIfPresent(String.self, forKey: .publishedAt)
+        content     = try values.decodeIfPresent(String.self, forKey: .content)
+    }
+    
+    init(data: NSManagedObject) {
+        author              = data.value(forKey: "author") as? String ?? ""
+        title               = data.value(forKey: "title") as? String ?? ""
+        newsDescription     = data.value(forKey: "newsDescription") as? String ?? ""
+        webLink             = data.value(forKey: "webLink") as? String ?? ""
+        urlToImage          = data.value(forKey: "urlToImage") as? String ?? ""
+        publishedAt         = data.value(forKey: "publishedAt") as? String ?? ""
+        content             = data.value(forKey: "content") as? String ?? ""
+       }
+}
 
 struct NewsResultModel : Codable {
     let status          : String?
@@ -25,61 +72,6 @@ struct NewsResultModel : Codable {
         status          = try values.decodeIfPresent(String.self, forKey: .status)
         totalResults    = try values.decodeIfPresent(Int.self, forKey: .totalResults)
         articles        = try values.decodeIfPresent([ArticleModel].self, forKey: .articles)
-    }
-
-}
-
-struct ArticleModel : Codable {
-    let source      : SourceModel?
-    let author      : String?
-    let title       : String?
-    let description : String?
-    let webLink     : String?
-    let urlToImage  : String?
-    let publishedAt : String?
-    let content     : String?
-
-    enum CodingKeys: String, CodingKey {
-
-        case source         = "source"
-        case author         = "author"
-        case title          = "title"
-        case description    = "description"
-        case webLink        = "url"
-        case urlToImage     = "urlToImage"
-        case publishedAt    = "publishedAt"
-        case content        = "content"
-    }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        source      = try values.decodeIfPresent(SourceModel.self, forKey: .source)
-        author      = try values.decodeIfPresent(String.self, forKey: .author)
-        title       = try values.decodeIfPresent(String.self, forKey: .title)
-        description = try values.decodeIfPresent(String.self, forKey: .description)
-        webLink     = try values.decodeIfPresent(String.self, forKey: .webLink)
-        urlToImage  = try values.decodeIfPresent(String.self, forKey: .urlToImage)
-        publishedAt = try values.decodeIfPresent(String.self, forKey: .publishedAt)
-        content     = try values.decodeIfPresent(String.self, forKey: .content)
-    }
-
-}
-
-
-struct SourceModel : Codable {
-    let id      : String?
-    let name    : String?
-
-    enum CodingKeys: String, CodingKey {
-
-        case id     = "id"
-        case name   = "name"
-    }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id          = try values.decodeIfPresent(String.self, forKey: .id)
-        name        = try values.decodeIfPresent(String.self, forKey: .name)
     }
 
 }
