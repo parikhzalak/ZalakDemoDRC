@@ -26,7 +26,7 @@ class NewsDetailViewController: UIViewController {
     //MARK:- LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.title = "Details"
+        title = "Details"
         setUpData()
     }
     

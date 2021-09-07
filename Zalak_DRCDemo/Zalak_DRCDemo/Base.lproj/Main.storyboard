@@ -15,73 +15,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="FJE-au-XHV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FJE-au-XHV">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="405" id="fAq-Bv-aO6" customClass="NewsTableViewCell" customModule="Zalak_DRCDemo" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="405"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="405"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fAq-Bv-aO6" id="8qb-Iv-tcg">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="405"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="405"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLW-kk-miC">
-                                                    <rect key="frame" x="204" y="20" width="150" height="150"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="Utr-PU-2ke"/>
-                                                        <constraint firstAttribute="width" secondItem="zLW-kk-miC" secondAttribute="height" id="cNc-u2-4Tn"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAW-Pa-U6b">
-                                                    <rect key="frame" x="20" y="20" width="169" height="142"/>
-                                                    <string key="text">Share access for your project repository with us once the practical is over so that we
-can take a clone of it and verify</string>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <string key="userLabel">Share access for your project repository with us once the practical is over so that we can take a clone of it and verify the project.</string>
-                                                </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hSy-kL-wsg">
-                                                    <rect key="frame" x="20" y="182" width="169" height="123"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hR1-hW-MA4">
+                                                    <rect key="frame" x="20" y="20" width="374" height="365"/>
                                                     <subviews>
-                                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-gH-RrN">
-                                                            <rect key="frame" x="0.0" y="0.0" width="169" height="32"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <state key="normal" title="Google.Com">
-                                                                <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="didTapOnWebLink:" destination="fAq-Bv-aO6" eventType="touchUpInside" id="LqV-JP-H3a"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e47-aR-fUG">
-                                                            <rect key="frame" x="0.0" y="47" width="169" height="20"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20th Sep, 2020 08:30 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyx-qM-NYq">
-                                                            <rect key="frame" x="0.0" y="82" width="169" height="41"/>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zLW-kk-miC">
+                                                            <rect key="frame" x="204" y="20" width="150" height="150"/>
+                                                            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="150" id="Utr-PU-2ke"/>
+                                                                <constraint firstAttribute="width" secondItem="zLW-kk-miC" secondAttribute="height" id="cNc-u2-4Tn"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAW-Pa-U6b">
+                                                            <rect key="frame" x="20" y="20" width="169" height="142"/>
+                                                            <string key="text">Share access for your project repository with us once the practical is over so that we
+can take a clone of it and verify</string>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                            <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
+                                                            <string key="userLabel">Share access for your project repository with us once the practical is over so that we can take a clone of it and verify the project.</string>
                                                         </label>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hSy-kL-wsg">
+                                                            <rect key="frame" x="20" y="182" width="169" height="163"/>
+                                                            <subviews>
+                                                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DF-gH-RrN">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="169" height="72"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                    <state key="normal" title="Google.Com">
+                                                                        <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <connections>
+                                                                        <action selector="didTapOnWebLink:" destination="fAq-Bv-aO6" eventType="touchUpInside" id="LqV-JP-H3a"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e47-aR-fUG">
+                                                                    <rect key="frame" x="0.0" y="87" width="169" height="20"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20th Sep, 2020 08:30 PM" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyx-qM-NYq">
+                                                                    <rect key="frame" x="0.0" y="122" width="169" height="41"/>
+                                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                                    <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
-                                                </stackView>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="hSy-kL-wsg" firstAttribute="top" secondItem="dAW-Pa-U6b" secondAttribute="bottom" constant="20" id="8ch-CD-FgH"/>
+                                                        <constraint firstItem="zLW-kk-miC" firstAttribute="leading" secondItem="dAW-Pa-U6b" secondAttribute="trailing" constant="15" id="Ddu-64-QBn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hSy-kL-wsg" secondAttribute="bottom" constant="20" id="GOt-DS-WOU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zLW-kk-miC" secondAttribute="trailing" constant="20" id="NY8-j8-2gt"/>
+                                                        <constraint firstItem="hSy-kL-wsg" firstAttribute="leading" secondItem="dAW-Pa-U6b" secondAttribute="leading" id="NbK-2w-00z"/>
+                                                        <constraint firstItem="dAW-Pa-U6b" firstAttribute="top" secondItem="hR1-hW-MA4" secondAttribute="top" constant="20" id="UZH-Lr-LBB"/>
+                                                        <constraint firstItem="hSy-kL-wsg" firstAttribute="trailing" secondItem="dAW-Pa-U6b" secondAttribute="trailing" id="cZ6-Qu-WZR"/>
+                                                        <constraint firstItem="zLW-kk-miC" firstAttribute="top" secondItem="dAW-Pa-U6b" secondAttribute="top" id="dho-Eq-Y7g"/>
+                                                        <constraint firstItem="dAW-Pa-U6b" firstAttribute="leading" secondItem="hR1-hW-MA4" secondAttribute="leading" constant="20" id="v5A-ya-Rha"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="zLW-kk-miC" firstAttribute="leading" secondItem="dAW-Pa-U6b" secondAttribute="trailing" constant="15" id="4Ny-bu-01S"/>
-                                                <constraint firstItem="dAW-Pa-U6b" firstAttribute="top" secondItem="8qb-Iv-tcg" secondAttribute="top" constant="20" id="GmU-Ru-oci"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hSy-kL-wsg" secondAttribute="bottom" constant="20" id="NCL-BK-IkZ"/>
-                                                <constraint firstItem="hSy-kL-wsg" firstAttribute="trailing" secondItem="dAW-Pa-U6b" secondAttribute="trailing" id="Z7k-ps-7Ey"/>
-                                                <constraint firstItem="zLW-kk-miC" firstAttribute="top" secondItem="dAW-Pa-U6b" secondAttribute="top" id="aG0-B3-Kuh"/>
-                                                <constraint firstAttribute="trailing" secondItem="zLW-kk-miC" secondAttribute="trailing" constant="20" id="eIr-Cx-AVe"/>
-                                                <constraint firstItem="dAW-Pa-U6b" firstAttribute="leading" secondItem="8qb-Iv-tcg" secondAttribute="leading" constant="20" id="kfB-Gc-K5I"/>
-                                                <constraint firstItem="hSy-kL-wsg" firstAttribute="top" secondItem="dAW-Pa-U6b" secondAttribute="bottom" constant="20" id="yid-yH-qkm"/>
-                                                <constraint firstItem="hSy-kL-wsg" firstAttribute="leading" secondItem="dAW-Pa-U6b" secondAttribute="leading" id="zYq-AI-l5S"/>
+                                                <constraint firstAttribute="trailing" secondItem="hR1-hW-MA4" secondAttribute="trailing" constant="20" id="7n5-9Y-9ac"/>
+                                                <constraint firstAttribute="bottom" secondItem="hR1-hW-MA4" secondAttribute="bottom" constant="20" id="GUq-Vj-aiN"/>
+                                                <constraint firstItem="hR1-hW-MA4" firstAttribute="top" secondItem="8qb-Iv-tcg" secondAttribute="top" constant="20" id="mFc-Y6-JFy"/>
+                                                <constraint firstItem="hR1-hW-MA4" firstAttribute="leading" secondItem="8qb-Iv-tcg" secondAttribute="leading" constant="20" id="zbO-Wa-NLf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="authorNameLabel" destination="e47-aR-fUG" id="re6-Su-ZEO"/>
                                             <outlet property="dateLabel" destination="kyx-qM-NYq" id="qdl-5M-NlK"/>
