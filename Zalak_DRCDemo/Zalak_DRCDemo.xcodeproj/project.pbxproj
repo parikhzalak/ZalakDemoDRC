@@ -76,10 +76,10 @@
 		95059D2626E798F000F8834B /* Zalak_DRCDemo */ = {
 			isa = PBXGroup;
 			children = (
-				9514816126E7C61C0048FB44 /* DataBase */,
-				9514815C26E7B9C40048FB44 /* Model */,
 				95059D2726E798F000F8834B /* AppDelegate.swift */,
 				95059D2926E798F000F8834B /* SceneDelegate.swift */,
+				9514816126E7C61C0048FB44 /* DataBase */,
+				9514815C26E7B9C40048FB44 /* Model */,
 				95059D3E26E7A74100F8834B /* ViewController */,
 				9514815826E7B3AA0048FB44 /* Application */,
 				95059D2D26E798F000F8834B /* Main.storyboard */,

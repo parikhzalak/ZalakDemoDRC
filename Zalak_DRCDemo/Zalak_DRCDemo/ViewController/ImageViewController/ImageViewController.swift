@@ -15,7 +15,7 @@ class ImageViewController: UIViewController {
     @IBOutlet private weak var newsImageView    : UIImageView!
     
     //MARK:- Variables -
-    var image = UIImage()
+    var newsImage = UIImage()
     
     //MARK:- LifeCycle -
     override func viewDidLoad() {
@@ -24,6 +24,7 @@ class ImageViewController: UIViewController {
     }
     
     private func prepareView() {
+        newsImageView.image = newsImage
         imageScrollView.minimumZoomScale = 1.0
         imageScrollView.maximumZoomScale = 5.0
         imageScrollView.showsHorizontalScrollIndicator = false

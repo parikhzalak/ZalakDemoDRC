@@ -22,7 +22,7 @@ class NewsDetailViewController: UIViewController {
     
     //MARK:- Variables -
     var articalDetail : ArticleModel!
-    
+    private var newsImage = UIImage()
     //MARK:- LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,26 @@ class NewsDetailViewController: UIViewController {
         contentLabel.text       = articalDetail.content
         discriptionLabel.text   = articalDetail.newsDescription
         newsWebLinkLabel.text   = articalDetail.webLink
-        dateLabel.text          = articalDetail.publishedAt
-        profileImageview.setImage(UIImage(), for: .normal)
+        dateLabel.text          = Utility.getDate(articalDetail.publishedAt ?? "").lowercased()
+        profileImageview.setTitle("", for: .normal)
+        profileImageview.imageView?.contentMode = .scaleToFill
+        setImageWith(articalDetail.urlToImage ?? "")
     }
+    
+    func setImageWith(_ url: String) {
+              if let url = URL(string: url) {
+                  let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                      guard let data = data, error == nil else { return }
+                      
+                      DispatchQueue.main.async { /// execute on main thread
+                        self.newsImage = UIImage(data: data) ?? UIImage()
+                        self.profileImageview.setBackgroundImage(self.newsImage, for: .normal)
+                      }
+                  }
+                  
+                  task.resume()
+              }
+          }
 }
 
 //MARK: - UIButton Action
@@ -49,7 +66,7 @@ extension NewsDetailViewController {
     }
     
     @IBAction private func didTapOnNewsImage(_ sender: UIButton) {
-        moveToNewsImageScreenWith(UIImage())
+        moveToNewsImageScreenWith(newsImage)
     }
 }
 
@@ -59,6 +76,7 @@ private extension NewsDetailViewController {
     private func moveToNewsImageScreenWith(_ image: UIImage) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let imgVC = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        imgVC.newsImage = newsImage
         navigationController?.pushViewController(imgVC, animated: true)
     }
     
