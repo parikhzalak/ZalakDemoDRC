@@ -40,7 +40,7 @@ extension NewsTableViewCell {
         newsTitleLabel.text = data.title
         newsWebLinkButton.setTitle(data.webLink, for: .normal)
         newsWebLinkButton.underline()
-        authorNameLabel.text = data.author
+        authorNameLabel.text = data.author?.components(separatedBy: ",").first
         dateLabel.text = Utility.getDate(data.publishedAt ?? "").lowercased()
         setImageWith(data.urlToImage ?? "")
     }
