@@ -26,7 +26,17 @@ class ImageViewController: UIViewController {
     private func prepareView() {
         imageScrollView.minimumZoomScale = 1.0
         imageScrollView.maximumZoomScale = 5.0
-        imageScrollView.contentSize = .init(width: 2000, height: 2000)
+        imageScrollView.showsHorizontalScrollIndicator = false
+        imageScrollView.showsVerticalScrollIndicator = false
+        imageScrollView.delegate = self
+//        imageScrollView.contentSize = .init(width: 2000, height: 2000)
+        
     }
     
+}
+
+extension ImageViewController : UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return newsImageView
+    }
 }

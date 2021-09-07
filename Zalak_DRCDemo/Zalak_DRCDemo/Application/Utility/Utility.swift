@@ -13,7 +13,7 @@ class Utility {
     //MARK: - Navigation
     class func createNavigation(for vc: UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: vc)
-        navigationController.navigationBar.isHidden = true
+        navigationController.navigationBar.isHidden = false
         navigationController.modalTransitionStyle = .coverVertical
         navigationController.modalPresentationStyle = .fullScreen
         return navigationController

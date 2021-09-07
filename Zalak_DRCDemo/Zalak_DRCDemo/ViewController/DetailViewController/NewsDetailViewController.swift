@@ -11,9 +11,12 @@ import UIKit
 class NewsDetailViewController: UIViewController {
     
     //MARK:- IBOutlet -
-    @IBOutlet private weak var profileImageview     : UIButton!
+    
     @IBOutlet private weak var newsTitleLabel       : UILabel!
     @IBOutlet private weak var authorNameLabel      : UILabel!
+    @IBOutlet private weak var contentLabel         : UILabel!
+    @IBOutlet private weak var profileImageview     : UIButton!
+    @IBOutlet private weak var discriptionLabel     : UILabel!
     @IBOutlet private weak var newsWebLinkLabel     : UILabel!
     @IBOutlet private weak var dateLabel            : UILabel!
     
@@ -23,6 +26,17 @@ class NewsDetailViewController: UIViewController {
     //MARK:- LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpData()
+    }
+    
+    private func setUpData() {
+        newsTitleLabel.text     = articalDetail.title
+        authorNameLabel.text    = articalDetail.author
+        contentLabel.text       = articalDetail.content
+        discriptionLabel.text   = articalDetail.description
+        newsWebLinkLabel.text   = articalDetail.webLink
+        dateLabel.text          = articalDetail.publishedAt
+        profileImageview.setImage(UIImage(), for: .normal)
     }
 }
 
