@@ -18,9 +18,42 @@ class NewsDetailViewController: UIViewController {
     @IBOutlet private weak var dateLabel            : UILabel!
     
     //MARK:- Variables -
-    var employeeData = [String]()
+    var articalDetail : ArticleModel!
     
+    //MARK:- LifeCycle -
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+}
+
+//MARK: - UIButton Action
+extension NewsDetailViewController {
+    
+    @IBAction private func didTapOnWebLink(_ sender: UIButton) {
+        presentWKWebScreenWith("")
+    }
+    
+    @IBAction private func didTapOnNewsImage(_ sender: UIButton) {
+        moveToNewsImageScreenWith(UIImage())
+    }
+}
+
+//MARK: - Navigation -
+private extension NewsDetailViewController {
+    
+    private func moveToNewsImageScreenWith(_ image: UIImage) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let imgVC = storyBoard.instantiateViewController(withIdentifier: "ImageViewController") as! ImageViewController
+        navigationController?.pushViewController(imgVC, animated: true)
+    }
+    
+    private func presentWKWebScreenWith(_ link: String) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let wkWebVC = storyBoard.instantiateViewController(withIdentifier: "WebLinkViewController") as! WebLinkViewController
+        
+        let navigationController = Utility.createNavigation(for: wkWebVC)
+        wkWebVC.url = URL( string: link)
+        present(navigationController, animated: true, completion: nil)
+    }
+    
 }

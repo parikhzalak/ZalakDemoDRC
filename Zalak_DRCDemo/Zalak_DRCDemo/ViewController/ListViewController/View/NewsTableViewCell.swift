@@ -36,8 +36,11 @@ class NewsTableViewCell: UITableViewCell {
 //MARK: - Set Data -
 extension NewsTableViewCell {
     
-    func setDataWith() {
-        
+    func setDataWith(_ data: ArticleModel) {
+        newsTitleLabel.text = data.title
+        newsWebLinkButton.setTitle(data.webLink, for: .normal)
+        authorNameLabel.text = data.author
+        dateLabel.text = data.publishedAt
     }
 }
 

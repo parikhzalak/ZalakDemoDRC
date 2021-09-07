@@ -260,6 +260,22 @@ can take a clone of it and verify</string>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odn-lP-CgY">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="householdPlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="cPj-Vk-oJO">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cPj-Vk-oJO" firstAttribute="top" secondItem="odn-lP-CgY" secondAttribute="top" id="Jwv-vC-P3y"/>
+                                    <constraint firstAttribute="trailing" secondItem="cPj-Vk-oJO" secondAttribute="trailing" id="Lh7-Mb-UHk"/>
+                                    <constraint firstAttribute="bottom" secondItem="cPj-Vk-oJO" secondAttribute="bottom" id="heA-mS-8in"/>
+                                    <constraint firstItem="cPj-Vk-oJO" firstAttribute="leading" secondItem="odn-lP-CgY" secondAttribute="leading" id="lgR-OJ-aiA"/>
+                                    <constraint firstItem="cPj-Vk-oJO" firstAttribute="centerY" secondItem="odn-lP-CgY" secondAttribute="centerY" id="myY-mK-8z2"/>
+                                    <constraint firstItem="cPj-Vk-oJO" firstAttribute="centerX" secondItem="odn-lP-CgY" secondAttribute="centerX" id="n5Y-bF-5I1"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="kZU-aK-Xjv" id="c54-o7-qVx"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -271,10 +287,14 @@ can take a clone of it and verify</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U2k-7D-a5x"/>
                     </view>
+                    <connections>
+                        <outlet property="imageScrollView" destination="odn-lP-CgY" id="ZcP-yH-HVd"/>
+                        <outlet property="newsImageView" destination="cPj-Vk-oJO" id="hYn-Ug-x6n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUp-II-jIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2839" y="105"/>
+            <point key="canvasLocation" x="2837.68115942029" y="104.46428571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Udu-TX-wmn">
@@ -295,4 +315,7 @@ can take a clone of it and verify</string>
             <point key="canvasLocation" x="-4" y="113"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="householdPlaceHolder" width="96" height="96"/>
+    </resources>
 </document>

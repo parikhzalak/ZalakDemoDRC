@@ -11,52 +11,59 @@ import WebKit
 
 class WebLinkViewController: UIViewController {
     
-    //MARK:- IBOutlet -
+    // MARK: - Variables
+    var url: URL?
     
-    //MARK:- Variables -
-    private let webView = WKWebView()
+    private let activityView = UIActivityIndicatorView(style: .large)
     
-    var webLink = ""
-    
-    //MARK:- LifeCycle -
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let leftBtn = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(dismissViewController(_:)))
+        navigationItem.leftBarButtonItem = leftBtn
+        self.title = "News WebSite"
         prepareView()
     }
     
-    private func prepareView() {
-        webView.frame = view.bounds
-        webView.navigationDelegate = self
-        
-        let url = URL(string: "https://www.google.com")!
-        let urlRequest = URLRequest(url: url)
-        
-        webView.load(urlRequest)
-        webView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
-        view.addSubview(webView)
+    @objc private func dismissViewController(_ sender : UIButton) {
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: - Prepare View
+    private func prepareView() {
+        let webView = WKWebView(frame: CGRect(x: 0.0, y: 0.0, width: view.frame.width, height: view.frame.height))
+        view.addSubview(webView)
+        showActivityIndicator()
+        if let uri = url {
+            webView.load(URLRequest(url: uri))
+            webView.uiDelegate = self
+            webView.navigationDelegate = self
+        }
+    }
+    
+    // MARK: - Helper Methods
+    private func showActivityIndicator() {
+        activityView.center = view.center
+        view.addSubview(activityView)
+        activityView.startAnimating()
+    }
 }
 
-//MARK:- WK navigation Delegate -
-extension WebLinkViewController : WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if navigationAction.navigationType == .linkActivated  {
-            if let url = navigationAction.request.url,
-                let host = url.host, !host.hasPrefix("www.google.com"),
-                UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-                print(url)
-                print("Redirected to browser. No need to open it locally")
-                decisionHandler(.cancel)
-            } else {
-                print("Open it locally")
-                decisionHandler(.allow)
-            }
-        } else {
-            print("not a user click")
+// MARK: - WebView Delegate Methods
+extension WebLinkViewController: WKUIDelegate, WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping ((WKNavigationActionPolicy) -> Void)) {
+       
             decisionHandler(.allow)
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        if(activityView.isAnimating) {
+            activityView.stopAnimating()
         }
     }
 }
