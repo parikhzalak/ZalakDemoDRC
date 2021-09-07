@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		95059D2826E798F000F8834B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059D2726E798F000F8834B /* AppDelegate.swift */; };
 		95059D2A26E798F000F8834B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059D2926E798F000F8834B /* SceneDelegate.swift */; };
-		95059D2C26E798F000F8834B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059D2B26E798F000F8834B /* ViewController.swift */; };
 		95059D2F26E798F000F8834B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95059D2D26E798F000F8834B /* Main.storyboard */; };
 		95059D3226E798F000F8834B /* Zalak_DRCDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95059D3026E798F000F8834B /* Zalak_DRCDemo.xcdatamodeld */; };
 		95059D3426E798F300F8834B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95059D3326E798F300F8834B /* Assets.xcassets */; };
 		95059D3726E798F300F8834B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95059D3526E798F300F8834B /* LaunchScreen.storyboard */; };
+		95059D4726E7A7CD00F8834B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059D4626E7A7CD00F8834B /* NewsTableViewCell.swift */; };
+		95059D4926E7A96600F8834B /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059D4826E7A96600F8834B /* NewsDetailViewController.swift */; };
+		95059D4B26E7A97200F8834B /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95059D4A26E7A97200F8834B /* NewsListViewController.swift */; };
+		9514815426E7AC400048FB44 /* WebLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514815326E7AC400048FB44 /* WebLinkViewController.swift */; };
+		9514815726E7AC5A0048FB44 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9514815626E7AC5A0048FB44 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		95059D2426E798F000F8834B /* Zalak_DRCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zalak_DRCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95059D2726E798F000F8834B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95059D2926E798F000F8834B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95059D2B26E798F000F8834B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95059D2E26E798F000F8834B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95059D3126E798F000F8834B /* Zalak_DRCDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zalak_DRCDemo.xcdatamodel; sourceTree = "<group>"; };
 		95059D3326E798F300F8834B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95059D3626E798F300F8834B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95059D3826E798F300F8834B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95059D4626E7A7CD00F8834B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		95059D4826E7A96600F8834B /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
+		95059D4A26E7A97200F8834B /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		9514815326E7AC400048FB44 /* WebLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebLinkViewController.swift; sourceTree = "<group>"; };
+		9514815626E7AC5A0048FB44 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,7 @@
 			children = (
 				95059D2726E798F000F8834B /* AppDelegate.swift */,
 				95059D2926E798F000F8834B /* SceneDelegate.swift */,
-				95059D2B26E798F000F8834B /* ViewController.swift */,
+				95059D3E26E7A74100F8834B /* ViewController */,
 				95059D2D26E798F000F8834B /* Main.storyboard */,
 				95059D3326E798F300F8834B /* Assets.xcassets */,
 				95059D3526E798F300F8834B /* LaunchScreen.storyboard */,
@@ -68,6 +76,58 @@
 				95059D3026E798F000F8834B /* Zalak_DRCDemo.xcdatamodeld */,
 			);
 			path = Zalak_DRCDemo;
+			sourceTree = "<group>";
+		};
+		95059D3E26E7A74100F8834B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				95059D3F26E7A75C00F8834B /* ListViewController */,
+				95059D4026E7A76F00F8834B /* DetailViewController */,
+				9514815226E7AC200048FB44 /* WebController */,
+				9514815526E7AC450048FB44 /* ImageViewController */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		95059D3F26E7A75C00F8834B /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				95059D4326E7A79700F8834B /* View */,
+				95059D4A26E7A97200F8834B /* NewsListViewController.swift */,
+			);
+			path = ListViewController;
+			sourceTree = "<group>";
+		};
+		95059D4026E7A76F00F8834B /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				95059D4826E7A96600F8834B /* NewsDetailViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		95059D4326E7A79700F8834B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95059D4626E7A7CD00F8834B /* NewsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9514815226E7AC200048FB44 /* WebController */ = {
+			isa = PBXGroup;
+			children = (
+				9514815326E7AC400048FB44 /* WebLinkViewController.swift */,
+			);
+			path = WebController;
+			sourceTree = "<group>";
+		};
+		9514815526E7AC450048FB44 /* ImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9514815626E7AC5A0048FB44 /* ImageViewController.swift */,
+			);
+			path = ImageViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +201,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95059D2C26E798F000F8834B /* ViewController.swift in Sources */,
+				95059D4926E7A96600F8834B /* NewsDetailViewController.swift in Sources */,
+				95059D4726E7A7CD00F8834B /* NewsTableViewCell.swift in Sources */,
+				9514815426E7AC400048FB44 /* WebLinkViewController.swift in Sources */,
 				95059D2826E798F000F8834B /* AppDelegate.swift in Sources */,
 				95059D3226E798F000F8834B /* Zalak_DRCDemo.xcdatamodeld in Sources */,
+				95059D4B26E7A97200F8834B /* NewsListViewController.swift in Sources */,
+				9514815726E7AC5A0048FB44 /* ImageViewController.swift in Sources */,
 				95059D2A26E798F000F8834B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
